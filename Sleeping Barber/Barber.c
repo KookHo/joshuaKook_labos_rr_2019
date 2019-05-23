@@ -4,7 +4,6 @@
 #include <semaphore.h>
 
 #define CHAIR 5
-#define TRUE 1
 
 sem_t customers;
 sem_t barbers;
@@ -20,9 +19,9 @@ void giveup_haircut();
 
 
 int main(){
-	sem_init(&customers, TRUE, 0);
-	sem_init(&barbers, TRUE, 0);
-	sem_init(&mutex, TRUE, 1);
+	sem_init(&customers, 1, 0);
+	sem_init(&barbers, 1, 0);
+	sem_init(&mutex, 1, 1);
 
 	pthread_t id1, id2;
 
@@ -30,7 +29,7 @@ int main(){
 	pthread_create(&id1, NULL, barber, NULL);
 
   //keeps generating clients
-	while(TRUE){
+	while(1){
 		pthread_create(&id2, NULL, customer, NULL);
 		sleep(1);
 	}
@@ -41,7 +40,7 @@ int main(){
 //if there's none, barber sleeps, otherwise,
 //barber cuts a client's hair
 void* barber(void* arg){
-	while(TRUE){
+	while(1){
 		sem_wait(&customers);
 		sem_wait(&mutex);
 		waiting--;
