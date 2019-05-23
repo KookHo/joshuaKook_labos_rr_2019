@@ -1,0 +1,5 @@
+The Sleeping Barber Problem's algorithm
+
+To execute the program you can:
+  1 - Use an IDE/online compiler  (the example was run on repl.it/languages/c)
+  2 - Use g++ Barber.c -o [outputfilename] and execute it with ./[outputfilename]
