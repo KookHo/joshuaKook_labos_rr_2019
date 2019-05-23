@@ -1,0 +1,9 @@
+The Banker's Algorithm for multiple resources
+
+Important:
+  If you want to change the matrixes, you must modify it in the code.
+
+How to execute the program:
+either: a - Use an IDE
+        b - compile it with the command: g++ MultipleResources.cpp -o [thenameyouwant]; 
+            then execute it with: ./[thenameyouchose]
